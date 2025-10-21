@@ -22,37 +22,28 @@ body {
     overflow-x: hidden;
 }
 
-/* ======= TÍTULO OPCIONAL ======= */
-h1 {
-    position: absolute;
-    top: 30px;
-    text-align: center;
-    font-family: "Orbitron", sans-serif;
-    color: var(--accent);
-    font-size: 2rem;
-    letter-spacing: 2px;
-    text-shadow: 0 0 12px var(--accent-glow);
-}
-
 /* ======= GALERÍA ======= */
 .bento-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
     width: 90%;
-    max-width: 1200px;
-    padding: 40px 0;
+    max-width: 1300px;
+    padding: 60px 0;
     animation: fadeIn 1.2s ease;
 }
 
-/* ======= ITEMS ======= */
+/* ======= ITEM ======= */
 .bento-item {
     position: relative;
-    overflow: hidden;
-    border-radius: 20px;
+    border-radius: 18px;
     background: linear-gradient(145deg, #111, #1a1a1a);
     box-shadow: 0 0 12px var(--shadow), inset 0 0 8px #000;
-    transition: transform 0.35s ease, box-shadow 0.4s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.4s ease;
 }
 
 .bento-item:hover {
@@ -60,32 +51,20 @@ h1 {
     box-shadow: 0 0 25px var(--accent-glow), inset 0 0 10px #000;
 }
 
-/* ======= DIFERENTES FORMAS ======= */
-.bento-item.large {
-    grid-row: span 2;
-}
-
-.bento-item.wide {
-    grid-column: span 2;
-}
-
-.bento-item.tall {
-    grid-row: span 2;
-}
-
 /* ======= IMÁGENES ======= */
 .bento-item img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: 20px;
-    transition: transform 0.6s ease;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    /* ✅ no corta ni deforma */
+    border-radius: 12px;
+    transition: transform 0.6s ease, filter 0.4s ease;
 }
 
 .bento-item:hover img {
-    transform: scale(1.08) rotate(1deg);
-    filter: brightness(1.2);
+    transform: scale(1.05);
+    filter: brightness(1.15);
 }
 
 /* ======= BOTÓN COPIAR ======= */
@@ -129,12 +108,10 @@ h1 {
 @media (max-width: 600px) {
     .bento-gallery {
         grid-template-columns: 1fr 1fr;
+        gap: 10px;
     }
 
-    .bento-item.large,
-    .bento-item.tall,
-    .bento-item.wide {
-        grid-column: span 1;
-        grid-row: span 1;
+    .bento-item img {
+        max-height: 250px;
     }
 }
