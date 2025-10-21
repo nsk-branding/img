@@ -11,26 +11,26 @@
 <body>
     <section class="bento-gallery">
         <div class="bento-item large">
-            <img src="ezgif-5349db462103d0.gif" alt="VirtualCon Outfit 1">
-            <button class="copy-btn" onclick="copyURL('ezgif-5349db462103d0.gif')">📋</button>
+            <img src="IMG/VirtualCon/ezgif-5349db462103d0.gif" alt="VirtualCon Outfit 1">
+            <button class="copy-btn" onclick="copyURL('IMG/VirtualCon/ezgif-5349db462103d0.gif')">📋</button>
         </div>
         <div class="bento-item tall">
-            <img src="ezgif-501965a8a2ee5f.gif" alt="VirtualCon Outfit 2">
-            <button class="copy-btn" onclick="copyURL('ezgif-501965a8a2ee5f.gif')">📋</button>
+            <img src="IMG/VirtualCon/ezgif-501965a8a2ee5f.gif" alt="VirtualCon Outfit 2">
+            <button class="copy-btn" onclick="copyURL('IMG/VirtualCon/ezgif-501965a8a2ee5f.gif')">📋</button>
         </div>
         <div class="bento-item">
-            <img src="f2024.gif" alt="VirtualCon 2024 Female">
-            <button class="copy-btn" onclick="copyURL('f2024.gif')">📋</button>
+            <img src="IMG/VirtualCon/f2024.gif" alt="VirtualCon 2024 Female">
+            <button class="copy-btn" onclick="copyURL('IMG/VirtualCon/f2024.gif')">📋</button>
         </div>
         <div class="bento-item wide">
-            <img src="m2024.gif" alt="VirtualCon 2024 Male">
-            <button class="copy-btn" onclick="copyURL('m2024.gif')">📋</button>
+            <img src="IMG/VirtualCon/m2024.gif" alt="VirtualCon 2024 Male">
+            <button class="copy-btn" onclick="copyURL('IMG/VirtualCon/m2024.gif')">📋</button>
         </div>
     </section>
 
     <script>
         function copyURL(filename) {
-            const fullURL = `${window.location.origin}/VirtualCon/${filename}`;
+            const fullURL = `${window.location.origin}/${filename}`;
             navigator.clipboard.writeText(fullURL)
                 .then(() => {
                     alert('✅ URL copiada:\n' + fullURL);
