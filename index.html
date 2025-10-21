@@ -33,19 +33,21 @@
 
     <script>
         function copyURL(filename) {
-            // new URL() construye correctamente la URL absoluta basada en la ubicación actual
-            const fullURL = new URL(filename, window.location.href).href;
+            // Agregamos la carpeta /VirtualCon/ manualmente
+            const base = window.location.origin;
+            const fullURL = `${base}/VirtualCon/${filename}`;
+
             navigator.clipboard.writeText(fullURL)
                 .then(() => {
                     alert('✅ URL copiada:\n' + fullURL);
                 })
                 .catch(err => {
                     console.error('Error al copiar:', err);
-                    // mostrar la URL en caso de fallo en el clipboard
                     prompt('Copia manualmente esta URL:', fullURL);
                 });
         }
     </script>
+
 </body>
 
 </html>
